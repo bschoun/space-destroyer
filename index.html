@@ -262,6 +262,8 @@
         const pi = Math.PI;         // Pi!
         //const battLevelSpan = document.getElementById('battLevelSpan'); // Our battery level element
         const simframe = document.getElementById('simframe');
+        const joystick = 
+                document.getElementsByClassName('joystick-handle');
 
         // Attitude/heading reference system using Madgwick algorithm. beta can be adjusted lower for smoother movement
         const madgwick = new AHRS({
@@ -425,70 +427,6 @@
             document.dispatchEvent(arrowUpEvent);
             controller.up().raiseButtonDown();
         }
-
-
-
-        document.addEventListener('keydown', e => console.log(
-            'altKey                : ' + e.altKey + '\n' +
-            'charCode (Deprecated) : ' + e.charCode + '\n' +
-            'code                  : ' + e.code + '\n' +
-            'ctrlKey               : ' + e.ctrlKey + '\n' +
-            'isComposing           : ' + e.isComposing + '\n' +
-            'key                   : ' + e.key + '\n' +
-            'keyCode (Deprecated)  : ' + e.keyCode + '\n' +
-            'location              : ' + e.location + '\n' +
-            'metaKey               : ' + e.metaKey + '\n' +
-            'repeat                : ' + e.repeat + '\n' +
-            'shiftKey              : ' + e.shiftKey + '\n' +
-            'which (Deprecated)    : ' + e.which + '\n' +
-            'isTrusted             : ' + e.isTrusted + '\n' +
-            'type                  : ' + e.type
-            ));
-
-        Podium = {};
-        Podium.keydown = function(k) {
-        var oEvent = document.createEvent('KeyboardEvent');
-
-        // Chromium Hack
-        Object.defineProperty(
-            oEvent,
-            'keyCode',
-            {
-            get : function() {
-                return this.keyCodeVal;
-            }
-            }
-        );
-        Object.defineProperty(
-            oEvent,
-            'which',
-            {
-            get : function() {
-                return this.keyCodeVal;
-            }
-            }
-        );
-
-        if (oEvent.initKeyboardEvent) {
-            oEvent.initKeyboardEvent("keydown", true, true, document.defaultView,
-                                    false, false, false, false, k, k);
-        }
-        else {
-            oEvent.initKeyEvent("keydown", true, true, document.defaultView,
-                                false, false, false, false, k, 0);
-        }
-
-        oEvent.keyCodeVal = k;
-
-        if (oEvent.keyCode !== k) {
-            alert("keyCode mismatch " + oEvent.keyCode + "(" + oEvent.which + ")");
-        }
-
-        document.dispatchEvent(oEvent);
-        }
-
-        //Sample usage
-        Podium.keydown(65);
 
     </script>
     <script>
