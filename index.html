@@ -347,7 +347,7 @@
                 // Get the rotation data
                 var e = madgwick.getEulerAngles();
 
-                //console.log("pitch:", radians_to_degrees(e.pitch), "roll:", radians_to_degrees(e.roll));
+                console.log("pitch:", radians_to_degrees(e.pitch), "roll:", radians_to_degrees(e.roll));
 
                 if (e.roll < -45) {
                     press_a();
