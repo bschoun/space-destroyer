@@ -348,7 +348,7 @@
                 // Get the rotation data
                 var e = madgwick.getEulerAngles();
 
-                console.log("pitch:", radians_to_degrees(e.pitch), "roll:", radians_to_degrees(e.roll));
+                //console.log("pitch:", radians_to_degrees(e.pitch), "roll:", radians_to_degrees(e.roll));
 
                 if (e.roll < -45) {
                     arrow_left();
@@ -380,47 +380,47 @@
         }
 
         function arrow_right() {
-
+            console.log("RIGHT");
             let arrowRightEvent = new KeyboardEvent("keydown", {
                 key: "ArrowRight",
                 keyCode: 39,
                 which: 39
             });
 
-            simframe.dispatchEvent(arrowRightEvent);
+            window.dispatchEvent(arrowRightEvent);
         }
 
         function arrow_left() {
-
+            console.log("LEFT");
             let arrowLeftEvent = new KeyboardEvent("keydown", {
                 key: "ArrowLeft",
                 keyCode: 37,
                 which: 37
             });
 
-            simframe.dispatchEvent(arrowLeftEvent);
+            window.dispatchEvent(arrowLeftEvent);
         }
 
         function arrow_down() {
-
+            console.log("DOWN");
             let arrowDownEvent = new KeyboardEvent("keydown", {
                 key: "ArrowDown",
                 keyCode: 40,
                 which: 40
             });
 
-            simframe.dispatchEvent(arrowDownEvent);
+            window.dispatchEvent(arrowDownEvent);
         }
 
         function arrow_up() {
-
+            console.log("UP");
             let arrowUpEvent = new KeyboardEvent("keydown", {
                 key: "ArrowUp",
                 keyCode: 38,
                 which: 38
             });
 
-            simframe.dispatchEvent(arrowUpEvent);
+            window.dispatchEvent(arrowUpEvent);
         }
 
     </script>
