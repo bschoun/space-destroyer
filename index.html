@@ -387,7 +387,7 @@
                 which: 39
             });
 
-            window.dispatchEvent(arrowRightEvent);
+            simframe.dispatchEvent(arrowRightEvent);
         }
 
         function arrow_left() {
@@ -398,7 +398,7 @@
                 which: 37
             });
 
-            window.dispatchEvent(arrowLeftEvent);
+            simframe.dispatchEvent(arrowLeftEvent);
         }
 
         function arrow_down() {
@@ -409,7 +409,7 @@
                 which: 40
             });
 
-            window.dispatchEvent(arrowDownEvent);
+            document.dispatchEvent(arrowDownEvent);
         }
 
         function arrow_up() {
@@ -420,7 +420,7 @@
                 which: 38
             });
 
-            window.dispatchEvent(arrowUpEvent);
+            document.dispatchEvent(arrowUpEvent);
         }
 
     </script>
