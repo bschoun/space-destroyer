@@ -410,6 +410,7 @@
             });
 
             document.dispatchEvent(arrowDownEvent);
+            controller.down().raiseButtonDown();
         }
 
         function arrow_up() {
@@ -421,8 +422,12 @@
             });
 
             document.dispatchEvent(arrowUpEvent);
+            controller.up().raiseButtonDown();
         }
 
+    </script>
+    <script>
+        
     </script>
 </body>
 
