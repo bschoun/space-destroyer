@@ -613,8 +613,6 @@
         const pi = Math.PI;         // Pi!
         //const battLevelSpan = document.getElementById('battLevelSpan'); // Our battery level element
         const simframe = document.getElementById('simframe');
-        const joystick = 
-                document.getElementsByClassName('joystick-handle');
         
 
         // Attitude/heading reference system using Madgwick algorithm. beta can be adjusted lower for smoother movement
@@ -757,32 +755,35 @@
             //gamepadSimulator.fakeController.axes[1] = 1;
             //gamepadSimulator.fakeController.axes[2] = 1;
             //gamepadSimulator.fakeController.axes[3] = 1;
-            gamepadSimulator.fakeController.buttons[14].pressed = false;
-            gamepadSimulator.fakeController.buttons[15].pressed = true;
-            gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            var aButton = document.getElementsByClassName("button-a")[0];
-            simulateMouseClick(aButton);
+            //gamepadSimulator.fakeController.buttons[14].pressed = false;
+            //gamepadSimulator.fakeController.buttons[15].pressed = true;
+            //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
+            postMessage("RIGHT");
+            //simulateMouseClick(aButton);
         }
 
         function arrow_left() {
             console.log("LEFT");
-            gamepadSimulator.fakeController.buttons[15].pressed = false;
-            gamepadSimulator.fakeController.buttons[14].pressed = true;
-            gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
+            //gamepadSimulator.fakeController.buttons[15].pressed = false;
+            //gamepadSimulator.fakeController.buttons[14].pressed = true;
+            //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
+            postMessage("LEFT");
         }
 
         function arrow_down() {
             console.log("DOWN");
-            gamepadSimulator.fakeController.buttons[12].pressed = false;
-            gamepadSimulator.fakeController.buttons[13].pressed = true;
-            gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
+            //gamepadSimulator.fakeController.buttons[12].pressed = false;
+            //gamepadSimulator.fakeController.buttons[13].pressed = true;
+            //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
+            postMessage("DOWN");
         }
 
         function arrow_up() {
             console.log("UP");
-            gamepadSimulator.fakeController.buttons[13].pressed = false;
-            gamepadSimulator.fakeController.buttons[12].pressed = true;
-            gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
+            //gamepadSimulator.fakeController.buttons[13].pressed = false;
+            //gamepadSimulator.fakeController.buttons[12].pressed = true;
+            //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
+            postMessage("UP");
         }
     </script>
 </body>
