@@ -10,7 +10,7 @@
  * To register a constrol simmessages, use addSimMessageHandler
  */
 
-import { AHRS } from './www-ahrs.js';
+const AHRS = require('www-ahrs');
 
 // Code to upload to Puck.js
 var PUCK_CODE = `
