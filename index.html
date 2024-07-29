@@ -166,7 +166,7 @@
     <script type="text/javascript" src="www-ahrs.js"></script>
     <script src="https://www.puck-js.com/puck.js"></script>
     <script type="text/javascript">
-        makeCodeRun({ js: "./assets/js/binary.js?v={{ site.github.build_revision }}" });
+        var mcr = makeCodeRun({ js: "./assets/js/binary.js?v={{ site.github.build_revision }}" });
 
         if (window.location && window.location.search) {
             var noFooter = /nofooter=1/i.test(window.location.search);
@@ -401,7 +401,7 @@
             //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
             //simframe.contentWindow.postMessage('BRE','BRE');
             //simulateMouseClick(aButton);
-            stopSim();
+            mcr.stopSim();
         }
 
         function arrow_left() {
