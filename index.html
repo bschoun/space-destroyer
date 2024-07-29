@@ -399,8 +399,11 @@
             //gamepadSimulator.fakeController.buttons[14].pressed = false;
             //gamepadSimulator.fakeController.buttons[15].pressed = true;
             //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            simframe.contentWindow.postMessage('BRE','BRE');
+            //simframe.contentWindow.postMessage('BRE','BRE');
             //simulateMouseClick(aButton);
+            postMessage({
+                type: "stop"
+            });
         }
 
         function arrow_left() {
@@ -408,7 +411,7 @@
             //gamepadSimulator.fakeController.buttons[15].pressed = false;
             //gamepadSimulator.fakeController.buttons[14].pressed = true;
             //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            simframe.contentWindow.postMessage('BRE','BRE');
+            //simframe.contentWindow.postMessage('BRE','BRE');
         }
 
         function arrow_down() {
@@ -416,7 +419,7 @@
             //gamepadSimulator.fakeController.buttons[12].pressed = false;
             //gamepadSimulator.fakeController.buttons[13].pressed = true;
             //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            simframe.contentWindow.postMessage('BRE','BRE');
+            //simframe.contentWindow.postMessage('BRE','BRE');
         }
 
         function arrow_up() {
@@ -424,7 +427,7 @@
             //gamepadSimulator.fakeController.buttons[13].pressed = false;
             //gamepadSimulator.fakeController.buttons[12].pressed = true;
             //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            simframe.contentWindow.postMessage('BRE','BRE');
+            //simframe.contentWindow.postMessage('BRE','BRE');
         }
     </script>
 </body>
