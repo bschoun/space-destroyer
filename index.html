@@ -723,6 +723,9 @@
         function arrow_right() {
             console.log("RIGHT");
             gamepadSimulator.fakeController.axes[0] = 1;
+            gamepadSimulator.fakeController.axes[1] = 1;
+            gamepadSimulator.fakeController.axes[2] = 1;
+            gamepadSimulator.fakeController.axes[3] = 1;
             gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
         }
 
