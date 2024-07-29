@@ -350,20 +350,20 @@
 
                 //console.log("pitch:", radians_to_degrees(e.pitch), "roll:", radians_to_degrees(e.roll));
 
-                if (radians_to_degrees(e.roll) < -20) {
+                if (radians_to_degrees(e.roll) < -15) {
                     arrow_left();
                 }
-                else if (radians_to_degrees(e.roll) > 20) {
+                else if (radians_to_degrees(e.roll) > 15) {
                     arrow_right();
                 }
                 else {
                     arrow_central_horizontal();
                 }
                 
-                if (radians_to_degrees(e.pitch) < -20) {
+                if (radians_to_degrees(e.pitch) < -15) {
                     arrow_down();
                 }
-                else if (radians_to_degrees(e.pitch) > 20) {
+                else if (radians_to_degrees(e.pitch) > 15) {
                     arrow_up();
                 }
                 else {
@@ -406,7 +406,7 @@
 
         function arrow_central_vertical() {
             if (vertical != 0) {
-                if (vertical == -1) {
+                /*if (vertical == -1) {
                     simframe.contentWindow.postMessage({
                         button: 3,
                         pressed: false
@@ -417,7 +417,11 @@
                         button: 2,
                         pressed: false
                     }, simframe.getAttribute("src"));
-                }
+                }*/
+                simframe.contentWindow.postMessage({
+                        button: 0,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
                 vertical = 0;
             }
         }
@@ -464,14 +468,14 @@
                 console.log("DOWN");
                 if (vertical == 1) {
                     simframe.contentWindow.postMessage({
-                        button: 2,
+                        button: 0,//2, // stops pressing a button instead of up button
                         pressed: false
                     }, simframe.getAttribute("src"));
                 }
-                simframe.contentWindow.postMessage({
+                /*simframe.contentWindow.postMessage({
                     button: 3,
                     pressed: true
-                }, simframe.getAttribute("src"));
+                }, simframe.getAttribute("src"));*/
                 vertical = -1;
             }
         }
@@ -479,14 +483,14 @@
         function arrow_up() {
             if (vertical != 1) {
                 console.log("UP");
-                if (vertical == -1) {
+                /*if (vertical == -1) {
                     simframe.contentWindow.postMessage({
                         button: 3,
                         pressed: false
                     }, simframe.getAttribute("src"));
-                }
+                }*/
                 simframe.contentWindow.postMessage({
-                    button: 2,
+                    button: 0,//2,
                     pressed: true
                 }, simframe.getAttribute("src"));
                 vertical = 1;
