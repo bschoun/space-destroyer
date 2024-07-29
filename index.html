@@ -481,7 +481,7 @@
         }
 
         function arrow_up() {
-            //if (vertical != 1) {
+            if (vertical != 1) {
                 console.log("UP");
                 /*if (vertical == -1) {
                     simframe.contentWindow.postMessage({
@@ -494,7 +494,10 @@
                     pressed: true
                 }, simframe.getAttribute("src"));
                 vertical = 1;
-            //}
+            }
+            else {
+                arrow_down();
+            }
         }
 
         function render() {
