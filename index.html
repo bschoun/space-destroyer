@@ -289,7 +289,7 @@
                 timestamp: Math.floor(Date.now() / 1000)
             },
             create: function () {
-                document.querySelector("body").insertAdjacentHTML('beforeend', `<svg viewBox="0 0 600 300" id="amdfc-controller" width="350px" style="position: absolute; z-index: 999999; top: 0; left: 0;">
+                /*document.querySelector("body").insertAdjacentHTML('beforeend', `<svg viewBox="0 0 600 300" id="amdfc-controller" width="350px" style="position: absolute; z-index: 999999; top: 0; left: 0;">
             <style>
             .amdfc-int:hover {
             fill: #bbb;
@@ -426,7 +426,7 @@
                     }
                     }
                 });
-                });
+                });*/
 
                 gamepadSimulator.getGamepads = navigator.getGamepads;
                 navigator.getGamepads = function () {
@@ -438,7 +438,7 @@
                 gamepadSimulator.disconnect();
                 }
                 navigator.getGamepads = gamepadSimulator.getGamepads;
-                document.querySelector("#amdfc-controller").remove();
+                //document.querySelector("#amdfc-controller").remove();
             },
             connect: function () {
                 const event = new Event("gamepadconnected");
@@ -446,7 +446,7 @@
                 gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
                 event.gamepad = gamepadSimulator.fakeController;
                 window.dispatchEvent(event);
-                document.querySelector("#amdfc-controller").classList.add("connected");
+                //document.querySelector("#amdfc-controller").classList.add("connected");
             },
             disconnect: function () {
                 const event = new Event("gamepaddisconnected");
@@ -454,7 +454,7 @@
                 gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
                 event.gamepad = gamepadSimulator.fakeController;
                 window.dispatchEvent(event);
-                document.querySelector("#amdfc-controller").classList.remove("connected");
+                //document.querySelector("#amdfc-controller").classList.remove("connected");
             }
             }
 
