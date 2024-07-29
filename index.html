@@ -406,7 +406,8 @@
             //}, simframe.getAttribute("src"));
 
             simframe.contentWindow.postMessage({
-                button: 5
+                button: 5,
+                pressed: true
             }, simframe.getAttribute("src"));
         }
 
