@@ -350,10 +350,10 @@
 
                 //console.log("pitch:", radians_to_degrees(e.pitch), "roll:", radians_to_degrees(e.roll));
 
-                if (radians_to_degrees(e.roll) < -10) {
+                if (radians_to_degrees(e.roll) < -5) {
                     arrow_left();
                 }
-                else if (radians_to_degrees(e.roll) > 10) {
+                else if (radians_to_degrees(e.roll) > 5) {
                     arrow_right();
                 }
                 else {
