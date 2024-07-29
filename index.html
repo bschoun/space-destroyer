@@ -492,6 +492,11 @@
                 vertical = 1;
             }
         }
+
+        function render() {
+            window.requestAnimationFrame(render);
+        }
+        window.requestAnimationFrame(render);
     </script>
 </body>
 </html>
