@@ -401,8 +401,12 @@
             //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
             //simframe.contentWindow.postMessage('BRE','BRE');
             //simulateMouseClick(aButton);
+            //simframe.contentWindow.postMessage({
+            //    type: "stop"
+            //}, simframe.getAttribute("src"));
+
             simframe.contentWindow.postMessage({
-                type: "stop"
+                button: 5
             }, simframe.getAttribute("src"));
         }
 
