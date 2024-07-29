@@ -401,9 +401,7 @@
             //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
             //simframe.contentWindow.postMessage('BRE','BRE');
             //simulateMouseClick(aButton);
-            postMessage({
-                type: "stop"
-            });
+            stopSim();
         }
 
         function arrow_left() {
