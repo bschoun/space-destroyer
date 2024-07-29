@@ -511,11 +511,12 @@
         }
 
         window.addEventListener("gamepadconnected", function(e) {
-        console.log(`Gamepad connected: ${e.gamepad.id}`);
-        //document.querySelector("#events")
-        //        .insertAdjacentHTML('afterbegin', '<div><b>Gamepad connected.</b></div>');
-        gamepads[e.gamepad.index] = true;
-        readValues();
+            console.log(`Gamepad connected: ${e.gamepad.id}`);
+            console.log(`INDEX: ${e.gamepad.index}`);
+            //document.querySelector("#events")
+            //        .insertAdjacentHTML('afterbegin', '<div><b>Gamepad connected.</b></div>');
+            gamepads[e.gamepad.index] = true;
+            readValues();
         });
 
         window.addEventListener("gamepaddisconnected", function(e) {
@@ -525,8 +526,8 @@
         delete gamepads[e.gamepad.index];
         });
 
-        gamepadSimulator.create();
-        gamepadSimulator.connect();
+        //gamepadSimulator.create();
+        //gamepadSimulator.connect();
         
 
         // Code to upload to Puck.js
