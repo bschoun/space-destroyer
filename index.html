@@ -405,7 +405,21 @@
         }
 
         function arrow_central_vertical() {
-
+            if (vertical != 0) {
+                if (vertical == -1) {
+                    simframe.contentWindow.postMessage({
+                        button: 3,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
+                }
+                else if (vertical == 1) {
+                    simframe.contentWindow.postMessage({
+                        button: 2,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
+                }
+                vertical = 0;
+            }
         }
 
         function arrow_right() {
@@ -430,7 +444,7 @@
             
             if (horizontal != -1) {
                 console.log("LEFT");
-                if (horizontal == -1) {
+                if (horizontal == 1) {
                     simframe.contentWindow.postMessage({
                         button: 5,
                         pressed: false
@@ -445,19 +459,38 @@
         }
 
         function arrow_down() {
-            console.log("DOWN");
-            //gamepadSimulator.fakeController.buttons[12].pressed = false;
-            //gamepadSimulator.fakeController.buttons[13].pressed = true;
-            //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            //simframe.contentWindow.postMessage('BRE','BRE');
+            
+            if (vertical != -1) {
+                console.log("DOWN");
+                if (vertical == 1) {
+                    simframe.contentWindow.postMessage({
+                        button: 2,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
+                }
+                simframe.contentWindow.postMessage({
+                    button: 3,
+                    pressed: true
+                }, simframe.getAttribute("src"));
+                vertical = -1;
+            }
         }
 
         function arrow_up() {
-            console.log("UP");
-            //gamepadSimulator.fakeController.buttons[13].pressed = false;
-            //gamepadSimulator.fakeController.buttons[12].pressed = true;
-            //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            //simframe.contentWindow.postMessage('BRE','BRE');
+            if (vertical != 1) {
+                console.log("UP");
+                if (vertical == -1) {
+                    simframe.contentWindow.postMessage({
+                        button: 3,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
+                }
+                simframe.contentWindow.postMessage({
+                    button: 2,
+                    pressed: true
+                }, simframe.getAttribute("src"));
+                vertical = 1;
+            }
         }
     </script>
 </body>
