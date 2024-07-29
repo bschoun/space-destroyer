@@ -760,7 +760,7 @@
             gamepadSimulator.fakeController.buttons[14].pressed = false;
             gamepadSimulator.fakeController.buttons[15].pressed = true;
             gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            var aButton = document.getElementByClassName("button-a");
+            var aButton = document.getElementsByClassName("button-a")[0];
             simulateMouseClick(aButton);
         }
 
