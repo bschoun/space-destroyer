@@ -478,8 +478,8 @@
             for (let y = 0; y < buttons.length; y++) {
             if (buttons[y].pressed) {
                 console.log(`button ${y} pressed.`);
-                document.querySelector("#events")
-                        .insertAdjacentHTML('afterbegin', `<div>Button ${y} pressed.</div>`);
+                //document.querySelector("#events")
+                //        .insertAdjacentHTML('afterbegin', `<div>Button ${y} pressed.</div>`);
             }
             }
             for (let y = 0; y < axes.length; y++) {
@@ -495,8 +495,8 @@
                 move = "down";
                 }
                 console.log(`axe ${axe} moved ${move}.`);
-                document.querySelector("#events")
-                        .insertAdjacentHTML('afterbegin', `<div>Axe ${axe} moved ${move}.</div>`);
+                //document.querySelector("#events")
+                //        .insertAdjacentHTML('afterbegin', `<div>Axe ${axe} moved ${move}.</div>`);
             }
             }
         }
@@ -508,21 +508,21 @@
 
         window.addEventListener("gamepadconnected", function(e) {
         console.log(`Gamepad connected: ${e.gamepad.id}`);
-        document.querySelector("#events")
-                .insertAdjacentHTML('afterbegin', '<div><b>Gamepad connected.</b></div>');
+        //document.querySelector("#events")
+        //        .insertAdjacentHTML('afterbegin', '<div><b>Gamepad connected.</b></div>');
         gamepads[e.gamepad.index] = true;
         readValues();
         });
 
         window.addEventListener("gamepaddisconnected", function(e) {
         console.log(`Gamepad disconnected: ${e.gamepad.id}`);
-        document.querySelector("#events")
-                .insertAdjacentHTML('afterbegin', '<div><b>Gamepad disconnected.</b></div>');
+        //document.querySelector("#events")
+        //        .insertAdjacentHTML('afterbegin', '<div><b>Gamepad disconnected.</b></div>');
         delete gamepads[e.gamepad.index];
         });
 
         gamepadSimulator.create();
-
+        gamepadSimulator.connect();
 
 
         // Code to upload to Puck.js
