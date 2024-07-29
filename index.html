@@ -187,7 +187,11 @@
         }
     </script>
     <script>
-        /*const gamepadSimulator = {
+        if ('getGamepads' in navigator) {
+        // The API is supported!
+            console.log("Gamepads supported!");
+        }
+        const gamepadSimulator = {
             getGamepads: null,
             fakeController: {
                 axes: [0, 0, 0, 0],
@@ -523,7 +527,7 @@
 
         gamepadSimulator.create();
         gamepadSimulator.connect();
-        */
+        
 
         // Code to upload to Puck.js
         var PUCK_CODE = `
@@ -718,9 +722,8 @@
 
         function arrow_right() {
             console.log("RIGHT");
-            let nKeyChar=39;
-            let keyup=new KeyboardEvent(`keyup`,{key:nKeyChar});
-            document.dispatchEvent(keyup);
+            gamepadSimulator.fakeController.axes[0] = 1;
+            gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
         }
 
         function arrow_left() {
