@@ -234,6 +234,9 @@
         })
         `;
 
+        var horizontal = 0;
+        var vertical = 0;
+
         // Vector3 variables to hold data from accel/gyro/battery
         //var accel = new THREE.Vector3( 0, 0, 0);
         var accel = {
@@ -384,6 +387,21 @@
 
         function arrow_central_horizontal() {
             
+            if (horizontal != 0) {
+                if (horizontal == -1) {
+                    simframe.contentWindow.postMessage({
+                        button: 4,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
+                }
+                else if (horizontal == 1) {
+                    simframe.contentWindow.postMessage({
+                        button: 5,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
+                }
+                horizontal = 0;
+            }
         }
 
         function arrow_central_vertical() {
@@ -391,32 +409,39 @@
         }
 
         function arrow_right() {
-            console.log("RIGHT");
-            //gamepadSimulator.fakeController.axes[0] = 1;
-            //gamepadSimulator.fakeController.axes[1] = 1;
-            //gamepadSimulator.fakeController.axes[2] = 1;
-            //gamepadSimulator.fakeController.axes[3] = 1;
-            //gamepadSimulator.fakeController.buttons[14].pressed = false;
-            //gamepadSimulator.fakeController.buttons[15].pressed = true;
-            //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            //simframe.contentWindow.postMessage('BRE','BRE');
-            //simulateMouseClick(aButton);
-            //simframe.contentWindow.postMessage({
-            //    type: "stop"
-            //}, simframe.getAttribute("src"));
-
-            simframe.contentWindow.postMessage({
-                button: 5,
-                pressed: true
-            }, simframe.getAttribute("src"));
+            if (horizontal != 1) {
+                console.log("RIGHT");
+                if (horizontal == -1) {
+                    simframe.contentWindow.postMessage({
+                        button: 4,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
+                }
+                simframe.contentWindow.postMessage({
+                    button: 5,
+                    pressed: true
+                }, simframe.getAttribute("src"));
+                horizontal = 1;
+            }
+            
         }
 
         function arrow_left() {
-            console.log("LEFT");
-            //gamepadSimulator.fakeController.buttons[15].pressed = false;
-            //gamepadSimulator.fakeController.buttons[14].pressed = true;
-            //gamepadSimulator.fakeController.timestamp = Math.floor(Date.now() / 1000);
-            //simframe.contentWindow.postMessage('BRE','BRE');
+            
+            if (horizontal != -1) {
+                console.log("LEFT");
+                if (horizontal == -1) {
+                    simframe.contentWindow.postMessage({
+                        button: 5,
+                        pressed: false
+                    }, simframe.getAttribute("src"));
+                }
+                simframe.contentWindow.postMessage({
+                    button: 4,
+                    pressed: true
+                }, simframe.getAttribute("src"));
+                horizontal = -1;
+            }
         }
 
         function arrow_down() {
