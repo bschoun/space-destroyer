@@ -350,20 +350,20 @@
 
                 //console.log("pitch:", radians_to_degrees(e.pitch), "roll:", radians_to_degrees(e.roll));
 
-                if (radians_to_degrees(e.roll) < -15) {
+                if (radians_to_degrees(e.roll) < -10) {
                     arrow_left();
                 }
-                else if (radians_to_degrees(e.roll) > 15) {
+                else if (radians_to_degrees(e.roll) > 10) {
                     arrow_right();
                 }
                 else {
                     arrow_central_horizontal();
                 }
                 
-                if (radians_to_degrees(e.pitch) < -15) {
+                if (radians_to_degrees(e.pitch) < -5) {
                     arrow_down();
                 }
-                else if (radians_to_degrees(e.pitch) > 15) {
+                else if (radians_to_degrees(e.pitch) > 5) {
                     arrow_up();
                 }
                 else {
@@ -481,7 +481,7 @@
         }
 
         function arrow_up() {
-            if (vertical != 1) {
+            //if (vertical != 1) {
                 console.log("UP");
                 /*if (vertical == -1) {
                     simframe.contentWindow.postMessage({
@@ -494,7 +494,7 @@
                     pressed: true
                 }, simframe.getAttribute("src"));
                 vertical = 1;
-            }
+            //}
         }
 
         function render() {
