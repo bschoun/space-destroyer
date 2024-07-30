@@ -1,0 +1,13 @@
+/* This is new, should be put in a different file maybe */
+button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*
+    /*input has OS specific font-family*/
+    color: grey;
+    text-decoration: underline;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: monospace;
+}
